@@ -15,7 +15,9 @@ def apply_coupons(cart, coupons)
             # binding.pry
           for i in 0...coupon[:num]
             for f in 0...item[:count]
-              binding.pry
+              updated_cart.each{|up_item|
+                binding.pry
+              }
             end
           end
         end
