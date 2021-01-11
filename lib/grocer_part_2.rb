@@ -16,7 +16,9 @@ def apply_coupons(cart, coupons)
           for i in 0...coupon[:num]
             for f in 0...item[:count]
               updated_cart.each{|up_item|
-                # if up_item[:item]
+                if up_item[:item] == 
+                  up_item[:]
+                end
                 binding.pry
               }
             end
