@@ -4,6 +4,25 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  updated_cart = cart
+  if coupons.count > 0
+    coupons.each{|coupon|
+      cart.each{|item|
+        if item[:item] == coupon[:item]
+          updated_cart.push({:item => "#{item[:item]} W/COUPON", :price =>
+              (coupon[:cost] / coupon[:num]), :clearance => item[:clearance], :count => 0
+            })
+            # binding.pry
+          for i in 0...coupon[:num]
+            for f in 0...item[:count]
+              binding.pry
+            end
+          end
+        end
+      }
+    }
+  end
+  
 end
 
 def apply_clearance(cart)
